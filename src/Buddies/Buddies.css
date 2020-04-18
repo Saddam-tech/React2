@@ -1,0 +1,11 @@
+.Buddies {
+    margin: 16px auto;
+    background-color: #ccc;
+    border: 1px solid blue;
+    padding: 8px;
+    box-shadow: 0 2px 3px #eee;
+    text-align: center;
+    width: 40%;
+
+    
+}
