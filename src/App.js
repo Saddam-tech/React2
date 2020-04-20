@@ -40,28 +40,12 @@ class App extends Component {
 
   render() {
      
-
-    let persons = <button className={sss}onClick={this.onToggleHandler}>
-    follow
-  </button>;
-
-    if (this.state.showPersons) {
-      persons = (
-        <div>
-            <button className={sss} onClick={this.onToggleHandler}>
-          unfollow
-        </button>
-        </div>
-      );
-    }
+  
 
     return (
       <div className="App">
-        <h1> Hello, I am React App!</h1>
-         
-
-       {persons}
-      
+        <h1>Tap button to Follow</h1>
+       <button>{this.state.show ? "Follow" : "Unfollow"}</button>
       </div>
     );
   }
