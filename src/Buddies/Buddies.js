@@ -5,10 +5,10 @@ const Buddies = (props) => {
   return (
     <div className="Buddies">
       <p onClick={props.click}>
-        unfollow
+      I am {props.name} and I am {props.age} years old!
       </p>
 
-  <input type="text" onChange={props.changed}></input>
+  <input type="text" onChange={props.changed} value={props.name}></input>
     </div>
   );
 };

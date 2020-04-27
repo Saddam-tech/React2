@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import "./Buddies";
+import Buddies from "./Buddies/Buddies";
 
 class App extends Component {
   state = {
     Buddies: [
-      { name: "Saddam", age: "22" },
-      { name: "Jobirhon", age: "24" },
-      { name: "Tillo", age: "23" },
+      {id: "qwertss34", name: "Saddam", age: "22" },
+      {id: "qwertsfg23", name: "Jobirhon", age: "24" },
+      {id: "qwertrgr12", name: "Tillo", age: "23" },
     ],
 
     showPersons: false,
@@ -38,19 +38,40 @@ class App extends Component {
     this.setState({ showPersons: !doesShow });
   };
 
+   deleteBuddiesHandler = (buddyIndex) => {
+     const buddies = [...this.state.Buddies];
+     buddies.splice(buddyIndex, 1);
+     this.setState({Buddies: buddies}); 
+
+   };
+
+   onChangeHandler = () => {
+
+
+   }
+
   render() {
+
+     
      
 
-    let persons = <button className={sss}onClick={this.onToggleHandler}>
-    follow
+    let persons = <button onClick={this.onToggleHandler}>
+   ToggleBuddies
   </button>;
 
     if (this.state.showPersons) {
       persons = (
         <div>
-            <button className={sss} onClick={this.onToggleHandler}>
-          unfollow
-        </button>
+             {this.state.Buddies.map((buddy, index) => {
+               return (
+                 <Buddies 
+                 name={buddy.name}
+                 age={buddy.age}
+                 click={() => this.deleteBuddiesHandler(index)}
+                 key={buddy.key}
+                 />
+               );
+             })}
         </div>
       );
     }
